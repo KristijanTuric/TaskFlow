@@ -29,6 +29,9 @@ function App() {
         <div>
             <h1>Task Manager</h1>
             <TaskList tasks={tasks} loading={loading} />
+
+            <h1>Add a New Task</h1>
+            <AddTask loadTasks={loadTasks} />
         </div>
     );
 }
