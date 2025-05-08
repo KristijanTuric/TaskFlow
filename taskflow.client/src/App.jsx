@@ -6,6 +6,31 @@ import SearchTask from "./components/SearchTask.jsx";
 import './App.css';
 
 function App() {
+    const [tasks, setTasks] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const loadTasks = async () => {
+        setLoading(true);
+        try {
+            const res = await api.getAll(); 
+            setTasks(res);
+        } catch (error) {
+            console.error("Error fetching tasks: ", error);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        loadTasks();
+    }, []);
+
+    return (
+        <div>
+            <h1>Task Manager</h1>
+            <TaskList tasks={tasks} loading={loading} />
+        </div>
+    );
 }
 
 export default App;
