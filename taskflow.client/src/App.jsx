@@ -32,6 +32,10 @@ function App() {
 
             <h1>Add a New Task</h1>
             <AddTask loadTasks={loadTasks} />
+
+            <h1>Search for a task</h1>
+            <SearchTask />
+
         </div>
     );
 }
