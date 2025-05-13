@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
+
 import api from "./services/api.js";
+
 import TaskList from "./components/TaskList";
 import AddTask from "./components/AddTask";
 import SearchTask from "./components/SearchTask.jsx";
+import UpdateTask from "./components/UpdateTask.jsx";
+import DeleteTask from "./components/DeleteTask.jsx";
+
 import './App.css';
 
 function App() {
@@ -27,6 +32,7 @@ function App() {
 
     return (
         <div>
+            <h1>The Following Components are for Testing Only</h1>
             <h1>Task Manager</h1>
             <TaskList tasks={tasks} loading={loading} />
 
@@ -35,6 +41,12 @@ function App() {
 
             <h1>Search for a task</h1>
             <SearchTask />
+
+            <h1>Update Task Title</h1>
+            <UpdateTask loadTasks={loadTasks} />
+
+            <h1>Delete Task by Id</h1>
+            <DeleteTask loadTasks={loadTasks} />
 
         </div>
     );

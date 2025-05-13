@@ -38,7 +38,7 @@ namespace TaskFlow.Server.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, TaskItem updatedTask)
         {
-            if (id != updatedTask.Id) return BadRequest();
+            // if (id != updatedTask.Id) return BadRequest();
 
             var existingTask = await _context.TaskItems.FindAsync(id);
             if (existingTask == null) return NotFound();

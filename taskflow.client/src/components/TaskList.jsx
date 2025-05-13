@@ -9,7 +9,7 @@ export default function TaskList({ tasks, loading }) {
             ) : (
                 <ul>
                     {tasks.map(task => (
-                        <li key={task.id}>{task.title}</li>
+                        <li key={task.id}>{task.title} - {task.id}</li>
                     ))}
                 </ul>
             )}

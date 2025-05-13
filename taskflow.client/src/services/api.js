@@ -53,7 +53,19 @@ const api = {
             body: JSON.stringify(task),
         });
         return response.json();
-    }
+    },
+
+    // Delete task by id
+    deleteTask: async (id) => {
+        const response = await fetch(`http://localhost:5174/api/tasks/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        return response.json();
+    },
 };
 
 export default api;
