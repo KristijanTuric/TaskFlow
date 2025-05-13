@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 import api from "./services/api.js";
 
-import TaskList from "./components/TaskList";
-import AddTask from "./components/AddTask";
-import SearchTask from "./components/SearchTask.jsx";
-import UpdateTask from "./components/UpdateTask.jsx";
-import DeleteTask from "./components/DeleteTask.jsx";
+import TaskList from "./components/test/TaskList";
+import AddTask from "./components/test/AddTask";
+import SearchTask from "./components/test/SearchTask.jsx";
+import UpdateTask from "./components/test/UpdateTask.jsx";
+import DeleteTask from "./components/test/DeleteTask.jsx";
 
 import './App.css';
 
