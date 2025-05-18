@@ -7,6 +7,7 @@ import AddTask from "./components/test/AddTask";
 import SearchTask from "./components/test/SearchTask.jsx";
 import UpdateTask from "./components/test/UpdateTask.jsx";
 import DeleteTask from "./components/test/DeleteTask.jsx";
+import DialogPortal from "./components/dialogs/DialogPortal.jsx";
 
 import './App.css';
 
@@ -32,6 +33,9 @@ function App() {
 
     return (
         <div>
+            <h1>Open a dialog</h1>
+            <DialogPortal />          
+
             <h1>The Following Components are for Testing Only</h1>
             <h1>Task Manager</h1>
             <TaskList tasks={tasks} loading={loading} />

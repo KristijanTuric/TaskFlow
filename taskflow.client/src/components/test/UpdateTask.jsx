@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { StyledButton } from '../../styles/Button.style';
 import api from "../../services/api.js";
 
 export default function UpdateTask({loadTasks}) {
@@ -43,7 +44,7 @@ export default function UpdateTask({loadTasks}) {
                 onChange={(e) => setNewTaskTitle(e.target.value)}
             />
 
-            <button type="submit" onClick={handleSubmit}>Try to Update</button>
+            <StyledButton type="submit" onClick={handleSubmit}>Try to Update</StyledButton>
 
             <div>{error}</div>
         </form>

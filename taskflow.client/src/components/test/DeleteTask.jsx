@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { StyledButton } from '../../styles/Button.style';
 import api from "../../services/api.js";
 
 export default function DeleteTask({loadTasks}) {
@@ -33,7 +34,7 @@ export default function DeleteTask({loadTasks}) {
                 onChange={(e) => setTaskId(e.target.value)}
             />
 
-            <button type="submit" onClick={handleSubmit}>Delete Task</button>
+            <StyledButton type="submit" onClick={handleSubmit}>Delete Task</StyledButton>
 
             <div>{error}</div>
         </form>

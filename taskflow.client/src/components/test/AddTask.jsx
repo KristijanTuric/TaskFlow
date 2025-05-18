@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { StyledButton } from '../../styles/Button.style';
 import api from "../../services/api.js";
 
 export default function AddTask({loadTasks}) {
@@ -27,7 +28,7 @@ export default function AddTask({loadTasks}) {
                 value={taskTitle}
                 onChange={(e) => setTaskTitle(e.target.value)}
             />
-            <button type="submit">Add Task</button>
+            <StyledButton type="submit">Add Task</ StyledButton>
         </form>
     );
 }

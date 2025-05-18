@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { StyledButton } from '../../styles/Button.style';
 import api from "../../services/api.js";
 
 export default function SearchTask() {
@@ -37,7 +38,7 @@ export default function SearchTask() {
                     value={taskId}
                     onChange={(e) => setTaskId(e.target.value)}
                 />
-                <button type="submit">Does this task exist?</button>
+                <StyledButton type="submit">Does this task exist?</StyledButton>
             </form>
 
             {hasSearched && (
