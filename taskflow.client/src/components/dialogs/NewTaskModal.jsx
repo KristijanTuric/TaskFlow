@@ -1,7 +1,7 @@
 import { DefaultForm } from '../../styles/Form.style';
 import { ModalOverlay, Modal } from '../../styles/Div.style';
 import CustomButton from '../CustomButton';
-import { Plus, Flag, Calendar, Repeat, Tray, Check } from "@phosphor-icons/react";
+import { Flag, Calendar, Repeat, Tray, Check } from "@phosphor-icons/react";
 
 export default function NewTaskModal({ onClose }) {
     return (
