@@ -1,10 +1,16 @@
-export function ProjectList({projects}) {
+import { SidebarProjectDiv, SidebarProjectContainer } from "../../styles/Sidebar.style.js";
+
+export function ProjectList({ projects }) {
     return (
-        <div>
+        <SidebarProjectContainer>
             <h2>Projects</h2>
             {projects.map(project => (
-                <div key={project}>{project}</div>
+                <SidebarProjectDiv
+                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    key={project}>{project}</SidebarProjectDiv>
             ))}
-        </div>
+        </SidebarProjectContainer>
     );
 }

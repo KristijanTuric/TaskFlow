@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { motion } from "framer-motion";
 
 export const SidebarContainer = styled.div`
+    min-width: ${({ $isOpen }) => ($isOpen ? '200px' : 'none')};
     width: ${({ $isOpen }) => ($isOpen ? '15vw' : '4rem')};
     overflow: hidden;
-    background-color: lightblue;
+    background-color: #FEEFDD;
     min-height: 100vh;
     padding: 15px;
     display: flex;
@@ -32,4 +34,19 @@ export const SidebarButtons = styled.div`
     button {
         font-size: 18px;
     }
+`
+
+export const SidebarProjectContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+`
+
+export const SidebarProjectDiv = styled(motion.div)`
+    color: #201E1F;
+    font-size: 22px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid #FAAA8D;
+    font-weight: bold;
 `

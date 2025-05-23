@@ -1,8 +1,10 @@
 import CustomButton from "../CustomButton";
-import { SidebarContainer, SidebarHeader, SidebarButtons } from "../../styles/Sidebar.style";
 import IconButton from "../buttons/IconButton";
-import { Bell, SidebarSimple, PlusCircle, Tray, CalendarDot, CalendarDots } from "@phosphor-icons/react";
 import { ProjectList } from "./ProjectsList";
+
+import { SidebarContainer, SidebarHeader, SidebarButtons } from "../../styles/Sidebar.style.js";
+import { Bell, SidebarSimple, PlusCircle, Tray, CalendarDot, CalendarDots } from "@phosphor-icons/react";
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Sidebar({handleSidebarToggle, isOpen}) {
@@ -11,16 +13,16 @@ export function Sidebar({handleSidebarToggle, isOpen}) {
             <SidebarHeader $isOpen={isOpen}>
                 <AnimatePresence>
                     {isOpen && (
-                        <motion.span
-                            key="Niki"
+                        <motion.div
+                            key="user.name"
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -10 }}
                             transition={{ duration: 0.2 }}
                             style={{ marginLeft: '0.5rem', whiteSpace: 'nowrap' }}
                         >
-                            <div>Niki</div>
-                        </motion.span>
+                            <div style={{ fontSize: "26px", fontWeight: "bold" }}>Niki</div>
+                        </motion.div>
                     )}
                 </AnimatePresence>
 
@@ -32,14 +34,14 @@ export function Sidebar({handleSidebarToggle, isOpen}) {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -10 }}
-                                transition={{ duration: 0.2 }}
+                                transition={{ duration: 0.1 }}
                                 style={{ display: 'inline-block' }}
                             >
-                                <IconButton icon={<Bell size={25} />} />
+                                <IconButton icon={<Bell size={28} />} />
                             </motion.div>
                         )}
                     </AnimatePresence>
-                    <IconButton icon={<SidebarSimple size={25} />} onClick={handleSidebarToggle} />
+                    <IconButton icon={<SidebarSimple size={28} />} onClick={handleSidebarToggle} />
                 </div>                
             </SidebarHeader>
 
