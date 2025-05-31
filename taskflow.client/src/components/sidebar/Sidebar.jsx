@@ -2,14 +2,19 @@ import CustomButton from "../CustomButton";
 import IconButton from "../buttons/IconButton";
 import { ProjectList } from "./ProjectsList";
 
-import { SidebarContainer, SidebarHeader, SidebarButtons } from "../../styles/Sidebar.style.js";
+import { SidebarContainer, SidebarHeader, SidebarButtons, SidebarIconsWrapper } from "../../styles/Sidebar.style.js";
 import { Bell, SidebarSimple, PlusCircle, Tray, CalendarDot, CalendarDots } from "@phosphor-icons/react";
 
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Sidebar({handleSidebarToggle, isOpen}) {
     return (
-        <SidebarContainer $isOpen={isOpen}>
+        <SidebarContainer
+            animate={{
+                width: isOpen ? '15vw' : '4rem',
+            }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+        >
             <SidebarHeader $isOpen={isOpen}>
                 <AnimatePresence>
                     {isOpen && (
@@ -26,23 +31,24 @@ export function Sidebar({handleSidebarToggle, isOpen}) {
                     )}
                 </AnimatePresence>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <AnimatePresence>
+                <SidebarIconsWrapper>
+                    <AnimatePresence mode="wait">
                         {isOpen && (
                             <motion.div
                                 key="Bell"
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -10 }}
-                                transition={{ duration: 0.1 }}
+                                transition={{ duration: 0.2 }}
                                 style={{ display: 'inline-block' }}
                             >
                                 <IconButton icon={<Bell size={28} />} />
                             </motion.div>
                         )}
                     </AnimatePresence>
+
                     <IconButton icon={<SidebarSimple size={28} />} onClick={handleSidebarToggle} />
-                </div>                
+                </SidebarIconsWrapper>               
             </SidebarHeader>
 
             <SidebarButtons>

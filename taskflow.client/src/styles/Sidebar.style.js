@@ -1,28 +1,27 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
 
-export const SidebarContainer = styled.div`
-    min-width: ${({ $isOpen }) => ($isOpen ? '200px' : 'none')};
-    width: ${({ $isOpen }) => ($isOpen ? '15vw' : '4rem')};
+export const SidebarContainer = styled(motion.div)`
+    width: 4rem;
     overflow: hidden;
     background-color: #FEEFDD;
-    min-height: 100vh;
     padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 45px;
-    transition: all 0.3s ease-in-out;
 `
 
 export const SidebarHeader = styled.div`
     display: flex;
     justify-content: ${({ $isOpen }) => ($isOpen ? 'space-between' : 'center')};
     align-items: center;
+    width: 100%;
+`
 
-    div:nth-of-type(2) {
-        display: flex;
-        gap: 5px;
-    }
+export const SidebarIconsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
 `
 
 export const SidebarButtons = styled.div`

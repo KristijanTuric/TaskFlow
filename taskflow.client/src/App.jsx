@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import api from "./services/api.js";
 
 import { Sidebar } from '../src/components/sidebar/Sidebar.jsx';
+import { MainView } from '../src/components/MainView.jsx';
 
 import TaskList from "./components/test/TaskList";
 import AddTask from "./components/test/AddTask";
@@ -39,8 +40,9 @@ function App() {
     }
 
     return (
-        <div>
+        <div style={{ display: 'flex', height: '100vh' }}>
             <Sidebar handleSidebarToggle={handleSidebarToggle} isOpen={sidebarOpen} />
+            <MainView isOpen={sidebarOpen} />
         </div>
     );
 }
